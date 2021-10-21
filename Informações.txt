@@ -1,0 +1,3 @@
+usuário administrador:
+email: admin@admin.com
+senha: admin
