@@ -26,17 +26,17 @@
                 <label class="col-sm-2 col-from-label">Cor da categoria</label>
                 <div class="col-sm-10">
                     <select name="color">
-                        <option value="#ff6e0d">Laranja</option>
-                        <option value="#007dff" selected>Azul</option>
-                        <option value="#ffaf31">Amarelo</option>
-                        <option value="#4ab106">Verde</option>
-                        <option value="#6200ee">Roxo</option>
-                        <option value="#ff5575">Rosa</option>
-                        <option value="#020202">Preto</option>
-                        <option value="#007dff">Azul claro</option>
-                        <option value="#ff0000">Vermelho</option>
-                        <option value="#FF5733">Marrom</option>
-                        <option value="#722F37">Vinho</option>
+                        <option value="ts-orange-bg">Laranja</option>
+                        <option value="ts-blue-bg" selected>Azul</option>
+                        <option value="ts-yellow-bg">Amarelo</option>
+                        <option value="ts-green-bg">Verde</option>
+                        <option value="ts-purple-bg">Roxo</option>
+                        <option value="ts-pink-bg">Rosa</option>
+                        <option value="ts-dark-bg">Preto</option>
+                        <option value="ts-blue-light-bg">Azul claro</option>
+                        <option value="ts-red-bg">Vermelho</option>
+                        <option value="ts-brown-bg">Marrom</option>
+                        <option value="ts-wine-bg">Vinho</option>
                       </select>
                 </div>
             </div>

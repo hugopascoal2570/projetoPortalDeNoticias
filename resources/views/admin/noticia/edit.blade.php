@@ -22,6 +22,12 @@
         <form action="{{route('noticias.update',['noticia'=>$noticia->id])}}" method="POST" class="form-horizontal">
             @method('PUT')
             @csrf 
+            <label>Foto de capa</label>
+            <img src="{{'/media/capas/' . $noticia->image}}" width="200" height="150px"/>
+
+
+
+            <label>Foto de capa Atual</label>
             <div class="form-group row">
                 <label class="col-sm-2 col-from-label">Titulo da Matéria</label>
                 <div class="col-sm-6">
@@ -61,6 +67,21 @@
               </select>
             </div>
             <br/>
+
+            <div class="row">
+                <div class="col-sm-6">
+                  <!-- select -->
+                  <div class="form-group">
+                    <label>Selecione a categoria da Matéria</label>
+                    <select class="form-control" name="categoria">
+                    @foreach ($categorias as $categoria)
+                      <option value="{{$categoria->nome}}">{{$categoria->nome}}</option>
+                    @endforeach
+                </select>
+                  </div>
+                </div>
+            </div> 
+
             <div class="form-group row"><br/>
                 <label class="col-sm-2 col-from-label">Corpo da Notícia</label>
             </div>
@@ -86,7 +107,7 @@
         plugins:['link','table','image','autoresize','lists'],
         toolbar:'undo redo | formatselect | bold italic backcolor | media image | alignleft aligncenter alignright alignjustify | table| link | image | Abullist numlist | removeformat',
         content_css:[
-            '{{asset('assets/css/content.css')}}'
+            '{{asset('assets\css\content.css')}}'
         ],
         images_upload_url:'{{route('imageupload')}}',
         images_upload_credentials:true

@@ -24,7 +24,7 @@
 <tbody>
         <tr>
         <td>{{$categoria->nome}}</td>
-        <td><input type="color" name="bgcolor" disabled value="{{$categoria['color']}}" class="form-control" style="width:100px"/></td>
+        <td><input type="color" name="bgcolor" disabled value="{{$categoria['hexadecimal']}}" class="form-control " style="width:100px"/></td>
             <td>
 
             <a href="{{route('categorias.edit', ['categoria' => $categoria->id]) }}" class="btn btn-sm btn-info">Editar</a>

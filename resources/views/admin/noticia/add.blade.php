@@ -15,17 +15,19 @@
     <div class="card-body">
         <form action="{{route('noticias.store')}}" method="POST" class="form-horizontal" enctype="multipart/form-data">
             @csrf
-            
+            <label>Foto de capa</label>
+            <input type="file" id="image" name="image" required class="from-control-file">
+
             <div class="form-group row">
                 <label class="col-sm-2 col-from-label">Titulo da Matéria</label>
                 <div class="col-sm-6">
-                <input type="text" name="titulo" id="titulo"  class="form-control @error('titulo') is-invalid @enderror">
+                <input type="text" name="titulo" id="titulo"  required class="form-control @error('titulo') is-invalid @enderror">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-from-label">Sub Título</label>
                 <div class="col-sm-6">
-                <input type="text" name="sub-titulo" id="sub-titulo"  class="form-control @error('Sub-Título') is-invalid @enderror">
+                <input type="text" name="sub-titulo" id="sub-titulo"  required class="form-control @error('Sub-Título') is-invalid @enderror">
                 </div>
             </div>
             <div class="form-group row">
@@ -86,12 +88,9 @@
                 <label class="col-sm-2 col-from-label"></label>
                 <input type="submit" value="cadastrar" class="btn btn-success">
             </div>
-        </div>
         </form>
     </div>
-
-
-</form>
+    </div>
 <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=eijpmc7sdy2yipxuifg9fvebqq3l49ius24593k4ou1i4f0d"></script>
 <script>
     tinymce.init({
@@ -101,7 +100,7 @@
         plugins:['link','table','image','autoresize','lists'],
         toolbar:'undo redo | formatselect | bold italic backcolor | media image | alignleft aligncenter alignright alignjustify | table| link | image | Abullist numlist | removeformat',
         content_css:[
-            '{{asset('assets/css/content.css')}}'
+            '{{asset('assets\css\content.css')}}'
         ],
         images_upload_url:'{{route('imageupload')}}',
         images_upload_credentials:true

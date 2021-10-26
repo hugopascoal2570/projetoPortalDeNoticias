@@ -45,10 +45,51 @@ class CategoriasController extends Controller
             'color'
         ]);
 
+        if($data['color'] == 'ts-green-bg'){
+            $data['hexadecimal'] = '#4ab106';
+        }
+        if($data['color'] == 'ts-blue-bg'){
+            $data['hexadecimal'] = '#007dff';
+        }
+        if($data['color'] == 'ts-dark-bg'){
+            $data['hexadecimal'] = '#020202';
+        }
+        if($data['color'] == 'ts-blue-light-bg'){
+            $data['hexadecimal'] = '#007dff';
+        }
+        if($data['color'] == 'ts-pink-bg'){
+            $data['hexadecimal'] = '#ff5575';
+        }
+        if($data['color'] == 'ts-yellow-bg'){
+            $data['hexadecimal'] = '#ffaf31';
+        }
+        if($data['color'] == 'ts-orange-bg'){
+            $data['hexadecimal'] = '#ff6e0d';
+        }
+        if($data['color'] == 'ts-purple-bg'){
+            $data['hexadecimal'] = '#6200ee';
+        }
+        if($data['color'] == 'ts-white-bg'){
+            $data['hexadecimal'] = '#ffffff';
+        }
+        if($data['color'] == 'ts-red-bg'){
+            $data['hexadecimal'] = '#ff0000';
+        }
+        if($data['color'] == 'ts-brown-bg'){
+            $data['hexadecimal'] = '#FF5733';
+        }
+        if($data['color'] == 'ts-wine-bg'){
+            $data['hexadecimal'] = ' #722F37';
+        }
+        if($data['color'] == 'ts-blue-light-heighlight'){
+            $data['hexadecimal'] = '#007dff';
+        }
+
 
         $validator = Validator::make($data,[
             'nome' => ['required', 'string','max:255'],
             'color' => ['required', 'string','max:255'],
+            'hexadecimal' => ['required', 'string','max:255']
         ]);
         if($validator->fails()){
             return redirect()->route('categorias.create')
@@ -59,6 +100,7 @@ class CategoriasController extends Controller
         $categorias = New Categoria();
         $categorias->nome = $data['nome'];
         $categorias->color = $data['color'];
+        $categorias->hexadecimal = $data['hexadecimal'];
         $categorias->save();
 
         return redirect()->route('categorias.index');

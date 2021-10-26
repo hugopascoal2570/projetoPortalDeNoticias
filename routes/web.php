@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\NoticiasController;
 use App\Http\Controllers\CategoriasController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,13 @@ use App\Http\Controllers\CategoriasController;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
 });
+
+*/
+Route::get('/',[HomeController::class,'index'])->name('home');
+Route::get('/noticia/view/{id}',[HomeController::class, 'view'])->name('view');
 
 Route::prefix('/admin')->group(function(){
     Route::get('/login',[AdminController::class, 'login'])->name('login');
@@ -27,6 +32,8 @@ Route::prefix('/admin')->group(function(){
     Route::post('/logout',[AdminController::class,'logout']);
     //Route::get('/register',[AdminController::class, 'register']);
     //Route::post('/register',[AdminController::class,'registerAction']);
+
+    
 
     Route::resource('users', UsuariosController::class);
     Route::resource('noticias', NoticiasController::class);

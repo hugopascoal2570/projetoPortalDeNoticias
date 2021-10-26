@@ -32,7 +32,7 @@
         <td>{{$noticia->categoria}}</td>
         <td>
             <td>
-            <a href="{{route('noticias.edit', ['noticia' => $noticia->id]) }}" class="btn btn-sm btn-info">Editar</a>
+            <a href="{{route('noticias.edit', ['noticia' => $noticia->id]) }}"  class="btn btn-sm btn-info">Editar</a>
                     <form class="d-inline" method="POST" action="{{ route('noticias.destroy',['noticia' => $noticia->id]) }}" onsubmit="return confirm('tem certeza que deseja excluir?')" >
                         @method('DELETE')
                         @csrf
